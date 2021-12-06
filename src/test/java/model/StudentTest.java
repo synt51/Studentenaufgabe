@@ -1,11 +1,12 @@
-import model.Student;
+package model;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
 
-    Student student = new Student("Müller", "Andreas", "male", 25);
+    Student student = new Student("Müller", "Andreas", 1, "male", 25);
 
     @Test
     void checkLastName() {
@@ -64,5 +65,19 @@ class StudentTest {
         int age = 25;
         student.setAge(age);
         assertNotEquals(20, student.getAge());
+    }
+
+    @Test
+    void checkId() {
+        int id = 1;
+        student.setId(id);
+        assertEquals(id, student.getId());
+    }
+
+    @Test
+    void checkIdFalse() {
+        int id = 1;
+        student.setId(id);
+        assertNotEquals(2, student.getId());
     }
 }
