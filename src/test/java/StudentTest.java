@@ -1,4 +1,6 @@
-import org.junit.Test;
+
+
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -59,5 +61,4 @@ class StudentTest {
         student.setAge(age);
         assertNotEquals(20, student.getAge());
     }
-
 }
