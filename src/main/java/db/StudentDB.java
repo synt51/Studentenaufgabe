@@ -1,5 +1,6 @@
 package db;
 
+import model.ComputerScienceStudent;
 import model.Student;
 
 import java.util.List;
@@ -41,7 +42,7 @@ public class StudentDB {
         int rand = (int) (1 + (Math.random() * (this.students.size() + 1)));
         List<Student> studentID = this.students.stream().filter(student -> student.getId() == rand).collect(Collectors.toList());
         if (studentID.isEmpty()) {
-            return new Student("Bombadil", "Tom", 0, "diverse", 500);
+            return new ComputerScienceStudent("Bombadil", "Tom", 0, "diverse", 500, "Maiar");
         }
         return studentID.get(0);
     }

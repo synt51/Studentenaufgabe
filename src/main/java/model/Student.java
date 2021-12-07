@@ -2,95 +2,59 @@ package model;
 
 import java.util.Objects;
 
-public class Student {
+public interface Student {
 
-    int age;
-    String firstName;
-    String lastName;
-    String gender;
-    int id;
+    public static final int MINIMUM_AGE = 18;
 
-    public Student(String lastName, String firstName, int id, String gender, int age) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.id = id;
-        this.gender = gender;
-        this.age = age;
-    }
+    int getAge();
 
-    public int getAge() {
-        return age;
-    }
+    void setAge(int age);
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 
-    public String getFirstName() {
-        return firstName;
-    }
+    String getFirstName();
 
-    public boolean setFirstName(String firstName) {
-        if (firstName == null || firstName.isEmpty()) {
-            return false;
-        }
-        this.firstName = firstName;
-        return true;
-    }
+    boolean setFirstName(String firstName);
 
-    public int getId() {
-        return id;
-    }
+    int getId();
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    void setId(int id);
 
-   public String getLastName() {
-        return lastName;
-    }
+    String getLastName();
 
-    public boolean setLastName(String lastName) {
-        if (lastName == null || lastName.isEmpty()) {
-            return false;
-        }
-        this.lastName = lastName;
-        return true;
-    }
+    boolean setLastName(String lastName);
 
-    public String getGender() {
-        return gender;
-    }
+    String getGender();
 
-    public boolean setGender(String gender) {
-        if (gender == "male" || gender == "female" || gender == "diverse") {
-            this.gender = gender;
-            return true;
-        }
-        return false;
-    }
+    boolean setGender(String gender);
+
+    String getMajorCourse();
+
+    boolean setMajorCourse(String majorCourse);
 
     @Override
-    public String toString() {
-        return "Student{" +
-                "Nachname= '" + lastName + '\'' +
-                ", Vorname= '" + firstName + '\'' +
-                ", ID= " + id +
-                ", Geschlecht= '" + gender + '\'' +
-                ", Alter= " + age +
-                '}';
-    }
+    String toString();
+//    {
+//        return "Student{" +
+//                "Nachname= '" + lastName + '\'' +
+//                ", Vorname= '" + firstName + '\'' +
+//                ", ID= " + id +
+//                ", Geschlecht= '" + gender + '\'' +
+//                ", Alter= " + age +
+//                '}';
+//    }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return age == student.age && id == student.id && Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName) && Objects.equals(gender, student.gender);
-    }
+    boolean equals(Object o);
+//    {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Student student = (Student) o;
+//        return age == student.age && id == student.id && Objects.equals(firstName, student.firstName) && Objects.equals(lastName, student.lastName) && Objects.equals(gender, student.gender);
+//    }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(age, firstName, lastName, gender, id);
-    }
+    int hashCode();
+//    {
+//        return Objects.hash(age, firstName, lastName, gender, id);
+//    }
 }

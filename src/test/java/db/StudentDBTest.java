@@ -1,5 +1,7 @@
 package db;
 
+import model.ComputerScienceStudent;
+import model.HistoryStudent;
 import model.Student;
 import org.junit.jupiter.api.Test;
 
@@ -13,8 +15,8 @@ class StudentDBTest {
 
     private StudentDB getTestDB() {
         List<Student> students = new ArrayList<>();
-        students.add(new Student("Müller", "Andreas", 1, "male", 25));
-        students.add(new Student("Koch", "Sabine", 2, "diverse", 30));
+        students.add(new ComputerScienceStudent("Müller", "Andreas", 1, "male", 25, "Computer Science"));
+        students.add(new HistoryStudent("Koch", "Sabine", 2, "diverse", 30, "History"));
         StudentDB studentDB = new StudentDB(students);
         return studentDB;
     }
@@ -36,14 +38,14 @@ class StudentDBTest {
     @Test
     void checkAddingStudent() {
         StudentDB studentDB = getTestDB();
-        studentDB.addStudent(new Student("Schmitz", "Petra", 3, "female", 18));
+        studentDB.addStudent(new ComputerScienceStudent("Schmitz", "Petra", 3, "female", 18, "Computer Science"));
         assertEquals(3, studentDB.allStudents().size());
     }
 
     @Test
     void checkAddingStudentFalse() {
         StudentDB studentDB = getTestDB();
-        studentDB.addStudent(new Student("Schmitz", "Petra", 3, "female", 18));
+        studentDB.addStudent(new ComputerScienceStudent("Schmitz", "Petra", 3, "female", 18, "Computer Science"));
         assertNotEquals(4, studentDB.allStudents().size());
     }
 

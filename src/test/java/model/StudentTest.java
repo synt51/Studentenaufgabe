@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
 
-    Student student = new Student("Müller", "Andreas", 1, "male", 25);
+    Student student = new ComputerScienceStudent("Müller", "Andreas", 1, "male", 25, "Computer Science");
 
     @Test
     void checkLastName() {
@@ -51,6 +51,20 @@ class StudentTest {
         String gender = "male";
         assertFalse(student.setGender(null));
         assertNotEquals("ajdaoid", student.getGender());
+    }
+
+    @Test
+    void checkMajorCourse(){
+        String majorCourse = "Computer Science";
+        assertTrue(student.setMajorCourse(majorCourse));
+        assertEquals(majorCourse, student.getMajorCourse());
+    }
+
+    @Test
+    void checkMajorCourseFalse(){
+        String majorCourse = "Computer Science";
+        assertFalse(student.setMajorCourse(null));
+        assertNotEquals("ahsdahsjd", student.getMajorCourse());
     }
 
     @Test
