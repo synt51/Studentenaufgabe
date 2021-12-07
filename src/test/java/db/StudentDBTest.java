@@ -15,8 +15,8 @@ class StudentDBTest {
 
     private StudentDB getTestDB() {
         List<Student> students = new ArrayList<>();
-        students.add(new ComputerScienceStudent("Müller", "Andreas", 1, "male", 25, "Computer Science", 2.0,true));
-        students.add(new HistoryStudent("Koch", "Sabine", 2, "diverse", 30, "History", 1.7, false));
+        students.add(new ComputerScienceStudent("Müller", "Andreas", 1, "male", 25, "Computer Science", 2.0f,true));
+        students.add(new HistoryStudent("Koch", "Sabine", 2, "diverse", 30, "History", 1.7f, false));
         StudentDB studentDB = new StudentDB(students);
         return studentDB;
     }
@@ -24,7 +24,7 @@ class StudentDBTest {
     @Test
     void checkToString() {
         StudentDB studentDB = getTestDB();
-        String checkString = "StudentDB{students=[Student{Nachname= 'Müller', Vorname= 'Andreas', ID= 1, Geschlecht= 'male', Alter= 25}, Student{Nachname= 'Koch', Vorname= 'Sabine', ID= 2, Geschlecht= 'diverse', Alter= 30}]}";
+        String checkString = "StudentDB{students=[Student{Nachname='Müller', Vorname='Andreas', ID=1, Geschlecht='male', Alter=25, Hauptkurs='Computer Science', Note=2.0, Studentenvertreter='true'}, Student{Nachname='Koch', Vorname='Sabine', ID=2, Geschlecht='diverse', Alter=30, Hauptkurs='History', Note=1.7, Studentenvertreter='false'}]}";
         assertEquals(checkString, studentDB.toString());
     }
 
@@ -38,14 +38,14 @@ class StudentDBTest {
     @Test
     void checkAddingStudent() {
         StudentDB studentDB = getTestDB();
-        studentDB.addStudent(new ComputerScienceStudent("Schmitz", "Petra", 3, "female", 18, "Computer Science", 2.0,true));
+        studentDB.addStudent(new ComputerScienceStudent("Schmitz", "Petra", 3, "female", 18, "Computer Science", 2.0f,true));
         assertEquals(3, studentDB.allStudents().size());
     }
 
     @Test
     void checkAddingStudentFalse() {
         StudentDB studentDB = getTestDB();
-        studentDB.addStudent(new ComputerScienceStudent("Schmitz", "Petra", 3, "female", 18, "Computer Science",1.7, false));
+        studentDB.addStudent(new ComputerScienceStudent("Schmitz", "Petra", 3, "female", 18, "Computer Science",1.7f, false));
         assertNotEquals(4, studentDB.allStudents().size());
     }
 

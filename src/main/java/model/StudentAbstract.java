@@ -8,10 +8,10 @@ public abstract class StudentAbstract implements Student {
     private String gender;
     private int age;
     private String majorCourse;
-    private double studentGrade;
+    private float studentGrade;
     private boolean representative;
 
-    public StudentAbstract(String lastName, String firstName, int id, String gender, int age, String majorCourse, double studentGrade, boolean representative){
+    public StudentAbstract(String lastName, String firstName, int id, String gender, int age, String majorCourse, float studentGrade, boolean representative) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.id = id;
@@ -24,86 +24,87 @@ public abstract class StudentAbstract implements Student {
 
     abstract public int anzahlModule();
 
-    @Override
-    public String getLastName(){
+
+    public String getLastName() {
         return lastName;
     }
-    @Override
-    public boolean setLastName(String lastName){
-        if (lastName == null || lastName.isEmpty()){
+
+    public boolean setLastName(String lastName) {
+        if (lastName == null || lastName.isEmpty()) {
             return false;
         }
         this.lastName = lastName;
         return true;
     }
-    @Override
-    public String getFirstName(){
+
+    public String getFirstName() {
         return firstName;
     }
-    @Override
-    public boolean setFirstName(String firstName){
-        if (firstName == null || firstName.isEmpty()){
+
+    public boolean setFirstName(String firstName) {
+        if (firstName == null || firstName.isEmpty()) {
             return false;
         }
         this.firstName = firstName;
         return true;
     }
-    @Override
-    public int getId(){
+
+    public int getId() {
         return id;
     }
-    @Override
-    public void setId(int id){
+
+    public void setId(int id) {
         this.id = id;
     }
-    @Override
-    public String getGender(){
+
+    public String getGender() {
         return gender;
     }
-    @Override
-    public boolean setGender(String gender){
-        if (gender == "male" || gender == "female" || gender == "diverse"){
+
+    public boolean setGender(String gender) {
+        if (gender == "male" || gender == "female" || gender == "diverse") {
             this.gender = gender;
             return true;
         }
         return false;
     }
-    @Override
-    public int getAge(){
+
+    public int getAge() {
         return age;
     }
-    @Override
-    public void setAge(int age){
+
+    public void setAge(int age) {
         this.age = age;
     }
-    @Override
-    public String getMajorCourse(){
+
+    public String getMajorCourse() {
         return majorCourse;
     }
-    @Override
-    public boolean setMajorCourse(String majorCourse){
-        if(majorCourse.isEmpty() || majorCourse == null){
+
+    public boolean setMajorCourse(String majorCourse) {
+        if (majorCourse.isEmpty() || majorCourse == null) {
             return false;
         }
         this.majorCourse = majorCourse;
         return true;
     }
 
-    @Override
-    public double getStudentGrade(){
+
+    public float getStudentGrade() {
         return studentGrade;
     }
-    @Override
-    public void setStudentGrade(double studentGrade){
+
+
+    public void setStudentGrade(float studentGrade) {
         this.studentGrade = studentGrade;
     }
 
-    @Override
-    public boolean isRepresentative(){
+
+    public boolean isRepresentative() {
         return representative;
     }
-    @Override
-    public void setRepresentative(boolean representative){
+
+    public void setRepresentative(boolean representative) {
         this.representative = representative;
     }
 
@@ -119,6 +120,6 @@ public abstract class StudentAbstract implements Student {
                 ", Hauptkurs='" + majorCourse + '\'' +
                 ", Note=" + studentGrade +
                 ", Studentenvertreter='" + representative + '\'' +
-                '}';
+                '}' + '\n';
     }
 }

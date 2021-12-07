@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Objects;
-
 public interface Student {
 
     public static final int MINIMUM_AGE = 18;
@@ -31,9 +29,9 @@ public interface Student {
 
     boolean setMajorCourse(String majorCourse);
 
-    double getStudentGrade();
+    float getStudentGrade();
 
-    void setStudentGrade(double studentGrade);
+    void setStudentGrade(float studentGrade);
 
     boolean isRepresentative();
 
@@ -46,4 +44,5 @@ public interface Student {
 
     @Override
     int hashCode();
+
 }
