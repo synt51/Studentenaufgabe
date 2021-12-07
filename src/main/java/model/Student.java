@@ -31,6 +31,13 @@ public interface Student {
 
     boolean setMajorCourse(String majorCourse);
 
+    double getStudentGrade();
+
+    void setStudentGrade(double studentGrade);
+
+    boolean isRepresentative();
+
+    void setRepresentative(boolean representative);
     @Override
     String toString();
 

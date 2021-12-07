@@ -8,14 +8,18 @@ public abstract class StudentAbstract implements Student {
     private String gender;
     private int age;
     private String majorCourse;
+    private double studentGrade;
+    private boolean representative;
 
-    public StudentAbstract(String lastName, String firstName, int id, String gender, int age, String majorCourse){
+    public StudentAbstract(String lastName, String firstName, int id, String gender, int age, String majorCourse, double studentGrade, boolean representative){
         this.lastName = lastName;
         this.firstName = firstName;
         this.id = id;
         this.gender = gender;
         this.age = age;
         this.majorCourse = majorCourse;
+        this.studentGrade = studentGrade;
+        this.representative = representative;
     }
 
     abstract public int anzahlModule();
@@ -86,6 +90,25 @@ public abstract class StudentAbstract implements Student {
     }
 
     @Override
+    public double getStudentGrade(){
+        return studentGrade;
+    }
+    @Override
+    public void setStudentGrade(double studentGrade){
+        this.studentGrade = studentGrade;
+    }
+
+    @Override
+    public boolean isRepresentative(){
+        return representative;
+    }
+    @Override
+    public void setRepresentative(boolean representative){
+        this.representative = representative;
+    }
+
+
+    @Override
     public String toString() {
         return "Student{" +
                 "Nachname='" + lastName + '\'' +
@@ -94,6 +117,8 @@ public abstract class StudentAbstract implements Student {
                 ", Geschlecht='" + gender + '\'' +
                 ", Alter=" + age +
                 ", Hauptkurs='" + majorCourse + '\'' +
+                ", Note=" + studentGrade +
+                ", Studentenvertreter='" + representative + '\'' +
                 '}';
     }
 }
