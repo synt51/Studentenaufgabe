@@ -2,14 +2,14 @@ package model;
 
 
 
-public class HistoryStudent implements Student{
+public class HistoryStudent extends StudentAbstract{
 
-    String lastName = "Bombardil";
-    String firstName = "Tom";
-    int age = 500;
-    String gender = "diverse";
-    int id = 0;
-    String majorCourse = "dgaf";
+    String lastName;
+    String firstName;
+    int age;
+    String gender;
+    int id;
+    String majorCourse;
 
     public HistoryStudent(String lastName, String firstName,  int id, String gender, int age, String majorCourse){
         this.lastName = lastName;

@@ -1,13 +1,13 @@
 package model;
 
-public class ComputerScienceStudent implements Student{
+public class ComputerScienceStudent extends StudentAbstract{
 
-    String lastName = "Bombardil";
-    String firstName = "Tom";
-    int age = 500;
-    String gender = "diverse";
-    int id = 0;
-    String majorCourse = "Maiar";
+    String lastName;
+    String firstName;
+    int age;
+    String gender;
+    int id;
+    String majorCourse;
 
     public ComputerScienceStudent(String lastName, String firstName,  int id, String gender, int age, String majorCourse){
         this.lastName = lastName;
