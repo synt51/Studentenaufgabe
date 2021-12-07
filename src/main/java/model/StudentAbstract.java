@@ -2,12 +2,12 @@ package model;
 
 public abstract class StudentAbstract implements Student {
 
-    String lastName;
-    String firstName;
-    int id;
-    String gender;
-    int age;
-    String majorCourse;
+    private String lastName;
+    private String firstName;
+    private int id;
+    private String gender;
+    private int age;
+    private String majorCourse;
 
     public StudentAbstract(String lastName, String firstName, int id, String gender, int age, String majorCourse){
         this.lastName = lastName;
@@ -85,4 +85,15 @@ public abstract class StudentAbstract implements Student {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "Nachname='" + lastName + '\'' +
+                ", Vorname='" + firstName + '\'' +
+                ", ID=" + id +
+                ", Geschlecht='" + gender + '\'' +
+                ", Alter=" + age +
+                ", Hauptkurs='" + majorCourse + '\'' +
+                '}';
+    }
 }
