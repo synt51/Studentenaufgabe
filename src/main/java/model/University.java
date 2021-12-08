@@ -25,7 +25,6 @@ public class University {
      */
 
     private final String name = "Zitadelle von Altsass";
-   // private Student[] listStudents;
     private StudentAbstract studentRepresentative;
     private List<StudentAbstract> studentList = new ArrayList<>();
 
@@ -36,14 +35,6 @@ public class University {
     public List<StudentAbstract> getStudentList() {
         return this.studentList;
     }
-
-//    public Student[] getListStudents() {
-//        return listStudents;
-//    }
-
-//    public void setListStudents(Student[] listStudents) {
-//        this.listStudents = listStudents;
-//    }
 
 
     public int getStudentCount() {
