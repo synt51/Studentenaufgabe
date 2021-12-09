@@ -25,7 +25,6 @@ public class StudentDB {
 
     public void addStudent(StudentAbstract student) throws RuntimeException {
 
-        while (lastId <= students.size())
                 lastId += 1;
 
         if (this.students.containsKey(lastId)){   //student.getId() -> lastId

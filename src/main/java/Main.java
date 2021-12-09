@@ -32,14 +32,14 @@ public class Main {
 
         System.out.println("Test");
         StudentDB studentDB = new StudentDB(new HashMap<Integer, StudentAbstract>(Map.of(
-                1, historyStudent1,
-                2, computerScienceStudent1
+//                1, historyStudent1,
+//                2, computerScienceStudent1
                  )));
 
         System.out.println("Test2");
         Map<Integer, StudentAbstract> students = studentDB.list();
         System.out.println("Test3");
-        students.put(3,historyStudent2);
+        //students.put(3,historyStudent2);
         studentDB.addStudent(new HistoryStudent("Stark", "Eddard", "male", 38, "History", 1.3f, true));
         studentDB.addStudent(new HistoryStudent("Test", "McTest", "male", 38, "History", 1.3f, true));
         System.out.println(studentDB.list());
@@ -49,6 +49,9 @@ public class Main {
         studentDB.removeStudent(1);
         System.out.println(studentDB.list());
         System.out.println(studentDB.getStudentCount());
+        studentDB.addStudent(new HistoryStudent("Tarly", "Samwell", "male", 22, "History", 0.8f, false));
+        System.out.println(studentDB.list());
+
 
         //System.out.println(studentDB.getAverageGrade());
         //System.out.println(university.getStudentList());
