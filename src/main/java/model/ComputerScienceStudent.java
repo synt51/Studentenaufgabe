@@ -2,8 +2,8 @@ package model;
 
 public class ComputerScienceStudent extends StudentAbstract{
 
-    public ComputerScienceStudent(String lastName, String firstName,  int id, String gender, int age, String majorCourse, float studentGrade, boolean representative){
-        super(lastName, firstName, id, gender, age, majorCourse, studentGrade, representative);
+    public ComputerScienceStudent(String lastName, String firstName, String gender, int age, String majorCourse, float studentGrade, boolean representative){
+        super(lastName, firstName, gender, age, majorCourse, studentGrade, representative);
     }
 
     @Override

@@ -2,8 +2,6 @@ package model;
 
 public interface Student {
 
-    public static final int MINIMUM_AGE = 18;
-
     int getAge();
 
     void setAge(int age);

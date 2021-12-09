@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StudentTest {
 
-    Student student = new ComputerScienceStudent("Müller", "Andreas", 1, "male", 25, "Computer Science", 2.0f, true);
+    Student student = new ComputerScienceStudent("Müller", "Andreas", "male", 25, "Computer Science", 2.0f, true);
 
     @Test
     void checkLastName() {

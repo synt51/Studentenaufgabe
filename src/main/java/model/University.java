@@ -26,13 +26,14 @@ public class University {
 
     private final String name = "Zitadelle von Altsass";
     private StudentAbstract studentRepresentative;
-    private List<StudentAbstract> studentList = new ArrayList<>();
+    //private List<StudentAbstract> studentList = new ArrayList<>();
+    Map<Integer, StudentAbstract> studentList;
 
     public String getName() {
         return name;
     }
 
-    public List<StudentAbstract> getStudentList() {
+    public Map<Integer, StudentAbstract> getStudentList() {
         return this.studentList;
     }
 
@@ -42,38 +43,42 @@ public class University {
     }
 
     public void addStudent(StudentAbstract studentAbstract) {
-        studentList.add(studentAbstract);
+
+        studentList.put(studentAbstract.getId(), studentAbstract);
     }
 
-    public boolean removeStudent(int id) {
-        for (Student student : studentList) {
-            if (id == student.getId()) {
-                return studentList.remove(student);
-            }
-        }
-        return false;
+    public void removeStudent (Student student){
+        this.studentList.remove(student.getId());
     }
+//    public boolean removeStudent(int id) {
+//        for (Student student : studentList) {
+//            if (id == student.getId()) {
+//                return studentList.remove(student);
+//            }
+//        }
+//        return false;
+//    }
 
 //    public StudentAbstract getBestStudents() {
 //        return false;
 //    }
 
-    public boolean getStudentListRepresentative() {
-        for (StudentAbstract studentAbstract : studentList){
-            if (studentAbstract.isRepresentative() == true){
-                studentRepresentative = studentAbstract;
-                return true;
-            }
-        }
-        return false;
-    }
+//    public boolean getStudentListRepresentative() {
+//        for (StudentAbstract studentAbstract : studentList){
+//            if (studentAbstract.isRepresentative() == true){
+//                studentRepresentative = studentAbstract;
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
-    public float getAverageGrade() {
-        float avg = 0f;
-        for (StudentAbstract studentAbstract : studentList) {
-            avg += studentAbstract.getStudentGrade();
-        }
-        avg = avg / studentList.size();
-        return avg;
-    }
+//    public float getAverageGrade() {
+//        float avg = 0f;
+//        for (StudentAbstract studentAbstract : studentList) {
+//            avg += studentAbstract.getStudentGrade();
+//        }
+//        avg = avg / studentList.size();
+//        return avg;
+//    }
 }
