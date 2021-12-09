@@ -5,7 +5,6 @@ import model.Student;
 import model.StudentAbstract;
 import model.University;
 
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class Main {
@@ -26,11 +25,6 @@ public class Main {
 //        computerScienceStudent = new ComputerScienceStudent(5, "Tarly", "Samwell",  "male", 22, "Computer Science", 0.8f, false);
 //        university.addStudent(computerScienceStudent);
 
-        StudentAbstract historyStudent1 = new HistoryStudent("Schnee", "Jon", "male", 23, "History", 1.1f, true);
-        StudentAbstract computerScienceStudent1 = new ComputerScienceStudent("Sand", "Ellaria", "female", 40, "Computer Science", 1.7f, false);
-        StudentAbstract historyStudent2 = new HistoryStudent("Tarly", "Samwell", "male", 22, "History", 0.8f, false);
-
-
         StudentDB studentDB = new StudentDB(new HashMap<Integer, StudentAbstract>());
 
         Map<Integer, StudentAbstract> students = studentDB.list();
@@ -44,6 +38,7 @@ public class Main {
         System.out.println(studentDB.list());
         System.out.println(studentDB.getStudentCount());
         studentDB.addStudent(new HistoryStudent("Tarly", "Samwell", "male", 22, "History", 0.8f, false));
+        studentDB.addStudent(new ComputerScienceStudent("Greyjoy", "Theon", "diverse", 25, "Computer Science", 3.4f, false));
         System.out.println(studentDB.list());
 
 
