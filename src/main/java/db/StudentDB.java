@@ -25,7 +25,7 @@ public class StudentDB {
 
     public void addStudent(StudentAbstract student) throws RuntimeException {
 
-                lastId += 1;
+        lastId += 1;
 
         if (this.students.containsKey(lastId)){   //student.getId() -> lastId
             throw new RuntimeException("Etwas ist schief gelaufen.");

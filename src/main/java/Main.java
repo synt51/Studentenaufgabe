@@ -30,16 +30,10 @@ public class Main {
         StudentAbstract computerScienceStudent1 = new ComputerScienceStudent("Sand", "Ellaria", "female", 40, "Computer Science", 1.7f, false);
         StudentAbstract historyStudent2 = new HistoryStudent("Tarly", "Samwell", "male", 22, "History", 0.8f, false);
 
-        System.out.println("Test");
-        StudentDB studentDB = new StudentDB(new HashMap<Integer, StudentAbstract>(Map.of(
-//                1, historyStudent1,
-//                2, computerScienceStudent1
-                 )));
 
-        System.out.println("Test2");
+        StudentDB studentDB = new StudentDB(new HashMap<Integer, StudentAbstract>());
+
         Map<Integer, StudentAbstract> students = studentDB.list();
-        System.out.println("Test3");
-        //students.put(3,historyStudent2);
         studentDB.addStudent(new HistoryStudent("Stark", "Eddard", "male", 38, "History", 1.3f, true));
         studentDB.addStudent(new HistoryStudent("Test", "McTest", "male", 38, "History", 1.3f, true));
         System.out.println(studentDB.list());
